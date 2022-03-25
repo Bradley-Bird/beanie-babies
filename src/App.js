@@ -8,7 +8,7 @@ export default function App() {
     <Router>
       <div className="App">
         <Switch>
-          <Route path="/beanies">
+          <Route exact path="/beanies">
             <BeaniesPage />
           </Route>
           <Route path="/beanies/:id">

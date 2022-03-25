@@ -13,8 +13,6 @@ function App() {
       const from = page * perPage - perPage;
       const to = page * perPage;
       const beanies = await getBeanieBabies(from, to);
-      console.log(beanies);
-
       setBeanieBabies(beanies);
     }
 
@@ -23,7 +21,6 @@ function App() {
 
   return (
     <>
-      <BeaniesList {...{ beanieBabies }} />
       <h2>Current Page {page}</h2>
       <div className="buttons">
         {/* on click, this button should decrement the page in state  */}
@@ -33,6 +30,7 @@ function App() {
         <button onClick={() => setPage((prev) => prev + 1)}>Next Page</button>
       </div>
       {/* pass the beanie babies into the BeaniesList component */}
+      <BeaniesList beanieBabies={beanieBabies} />
     </>
   );
 }
